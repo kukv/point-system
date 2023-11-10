@@ -56,7 +56,7 @@ dependencies {
 
     testImplementation("io.ktor:ktor-server-test-host:2.3.5")
     testImplementation("io.ktor:ktor-client-cio:2.3.5")
-    testImplementation("io.ktor:ktor-client-content-negotiation:2.3.5")
+    testImplementation("io.ktor:ktor-client-content-negotiation:2.3.6")
 
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.0")
     testImplementation("io.mockk:mockk:1.13.8")
