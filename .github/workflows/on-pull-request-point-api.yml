@@ -1,4 +1,4 @@
-name: on-pull-request
+name: on-pull-request-point-api
 
 on:
   pull_request:

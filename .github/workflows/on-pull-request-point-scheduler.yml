@@ -1,4 +1,4 @@
-name: on-pull-request
+name: on-pull-request-point-scheduler
 
 on:
   pull_request:
