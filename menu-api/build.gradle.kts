@@ -36,7 +36,7 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("com.intuit.karate:karate-junit5:1.4.0")
+    testImplementation("com.intuit.karate:karate-junit5:1.4.1")
     testImplementation("net.masterthought:cucumber-reporting:5.7.5")
     testImplementation("com.tngtech.archunit:archunit-junit5:1.0.1")
 }
