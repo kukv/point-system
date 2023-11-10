@@ -1,0 +1,19 @@
+name: 'Gradle Build Cache'
+description: 'Gradle Build Cache'
+
+inputs:
+  cache-key:
+    description: 'Cache Key'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/cache@v3
+      with:
+        path: |
+          ~/.gradle/caches/build-cache-*
+          ~/.gradle/caches/[0-9]*.*
+          .gradle
+        key: ${{ runner.os }}-gradle-build-${{ github.workflow }}-${{ steps.cache-key.outputs.week }}-${{ github.sha }}
+        restore-keys: ${{ runner.os }}-gradle-build-${{ github.workflow }}-${{ steps.cache-key.outputs.week }}-

@@ -1,0 +1,19 @@
+name: 'Gradle Dependencies Cache'
+description: 'Gradle Dependencies Cache'
+
+inputs:
+  cache-key:
+    description: 'Cache Key'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/cache@v3
+      with:
+        path: |
+          ~/.gradle/caches/jars-*
+          ~/.gradle/caches/transforms-*
+          ~/.gradle/caches/modules-*
+        key: gradle-dependencies-${{ steps.cache-key.outputs.week }}-${{ hashFiles('**/*.gradle.kts') }}
+        restore-keys: gradle-dependencies-${{ steps.cache-key.outputs.week }}-

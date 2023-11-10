@@ -1,0 +1,92 @@
+name: on-pull-request
+
+on:
+  pull_request:
+    paths:
+      - 'build.gradle.kts'
+      - 'settings.gradle.kts'
+      - 'gradle.properties'
+      - '.editorconfig'
+      - 'gradle/**'
+      - 'docker/**'
+      - 'point-api/**'
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      cache-key: ${{ steps.weekly.cache-key.outputs.key }}
+    steps:
+      - id: weekly-cache-key
+        run: echo "key=$(TZ=Asia/Tokyo date +%W)" >> $GITHUB_OUTPUT
+
+  check-code-style:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs:
+      - setup
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Gradle Wrapper Cache
+        uses: ./.github/actions/gradle-cache-strategy/wrapper-cache
+
+      - name: Gradle Dependencies Cache
+        uses: ./.github/actions/gradle-cache-strategy/dependencies-cache
+        with:
+          cache-key: ${{ needs.setup.outputs.cache-key }}
+
+      - name: Gradle Build Cache
+        uses: ./.github/actions/gradle-cache-strategy/build-cache
+        with:
+          cache-key: ${{ needs.setup.outputs.cache-key }}
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'corretto'
+          java-version: 17
+
+      - name: Grant Execute Permission to gradlew
+        run: chmod +x gradlew
+
+      - name: Check Code Style
+        run: ./gradlew spotlessCheck
+
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs:
+      - check-code-style
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Gradle Wrapper Cache
+        uses: ./.github/actions/gradle-cache-strategy/wrapper-cache
+
+      - name: Gradle Dependencies Cache
+        uses: ./.github/actions/gradle-cache-strategy/dependencies-cache
+        with:
+          cache-key: ${{ needs.setup.outputs.cache-key }}
+
+      - name: Gradle Build Cache
+        uses: ./.github/actions/gradle-cache-strategy/build-cache
+        with:
+          cache-key: ${{ needs.setup.outputs.cache-key }}
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'corretto'
+          java-version: 17
+
+      - name: Grant Execute Permission to gradlew
+        run: chmod +x gradlew
+
+      - name: Check with Gradle
+        run: ./gradlew :point-api:build

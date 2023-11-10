@@ -1,5 +1,9 @@
 plugins {
-    id("com.diffplug.spotless")
+    id("com.diffplug.spotless") version "6.22.0"
+}
+
+repositories {
+    mavenCentral()
 }
 
 spotless {
