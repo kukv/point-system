@@ -32,7 +32,7 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation:2.3.6")
     implementation("io.ktor:ktor-server-status-pages:2.3.6")
 
-    implementation("io.github.smiley4:ktor-swagger-ui:2.6.0")
+    implementation("io.github.smiley4:ktor-swagger-ui:2.7.0")
     implementation("jp.kukv.ktor-extension-plugins:environment:0.1.2")
     implementation("com.github.Ricky12Awesome:json-schema-serialization:0.9.9")
 
