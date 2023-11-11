@@ -10,7 +10,7 @@ plugins {
 
     id("com.google.devtools.ksp") version "1.9.20-1.0.14"
 
-    id("io.ktor.plugin") version "2.3.5"
+    id("io.ktor.plugin") version "2.3.6"
 
     id("org.dddjava.jig-gradle-plugin") version "2023.10.1"
 
