@@ -54,7 +54,7 @@ dependencies {
 
     implementation("am.ik.yavi:yavi:0.13.1")
 
-    testImplementation("io.ktor:ktor-server-test-host:2.3.5")
+    testImplementation("io.ktor:ktor-server-test-host:2.3.6")
     testImplementation("io.ktor:ktor-client-cio:2.3.6")
     testImplementation("io.ktor:ktor-client-content-negotiation:2.3.6")
 
