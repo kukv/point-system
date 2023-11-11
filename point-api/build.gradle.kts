@@ -29,7 +29,7 @@ dependencies {
 
     implementation("io.ktor:ktor-server-core:2.3.5")
     implementation("io.ktor:ktor-server-cio:2.3.6")
-    implementation("io.ktor:ktor-server-content-negotiation:2.3.5")
+    implementation("io.ktor:ktor-server-content-negotiation:2.3.6")
     implementation("io.ktor:ktor-server-status-pages:2.3.5")
 
     implementation("io.github.smiley4:ktor-swagger-ui:2.6.0")
