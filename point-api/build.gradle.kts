@@ -25,12 +25,12 @@ repositories {
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.1")
 
-    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.5")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.6")
 
-    implementation("io.ktor:ktor-server-core:2.3.5")
-    implementation("io.ktor:ktor-server-cio:2.3.5")
-    implementation("io.ktor:ktor-server-content-negotiation:2.3.5")
-    implementation("io.ktor:ktor-server-status-pages:2.3.5")
+    implementation("io.ktor:ktor-server-core:2.3.6")
+    implementation("io.ktor:ktor-server-cio:2.3.6")
+    implementation("io.ktor:ktor-server-content-negotiation:2.3.6")
+    implementation("io.ktor:ktor-server-status-pages:2.3.6")
 
     implementation("io.github.smiley4:ktor-swagger-ui:2.6.0")
     implementation("jp.kukv.ktor-extension-plugins:environment:0.1.2")
@@ -54,9 +54,9 @@ dependencies {
 
     implementation("am.ik.yavi:yavi:0.13.1")
 
-    testImplementation("io.ktor:ktor-server-test-host:2.3.5")
-    testImplementation("io.ktor:ktor-client-cio:2.3.5")
-    testImplementation("io.ktor:ktor-client-content-negotiation:2.3.5")
+    testImplementation("io.ktor:ktor-server-test-host:2.3.6")
+    testImplementation("io.ktor:ktor-client-cio:2.3.6")
+    testImplementation("io.ktor:ktor-client-content-negotiation:2.3.6")
 
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.0")
     testImplementation("io.mockk:mockk:1.13.8")
