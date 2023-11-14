@@ -29,7 +29,7 @@ dependencies {
 
     implementation("ch.qos.logback:logback-access")
 
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
 
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
