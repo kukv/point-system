@@ -49,7 +49,7 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-kotlin-datetime:0.44.1")
 
     runtimeOnly("org.postgresql:postgresql:42.5.4")
-    implementation("com.zaxxer:HikariCP:5.0.1")
+    implementation("com.zaxxer:HikariCP:5.1.0")
 
     implementation("am.ik.yavi:yavi:0.13.1")
 
