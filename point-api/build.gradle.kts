@@ -12,8 +12,6 @@ plugins {
 
     id("io.ktor.plugin") version "2.3.6"
 
-    id("org.dddjava.jig-gradle-plugin") version "2023.10.1"
-
     id("com.avast.gradle.docker-compose") version "0.17.5"
 }
 
@@ -31,6 +29,7 @@ dependencies {
     implementation("io.ktor:ktor-server-cio:2.3.6")
     implementation("io.ktor:ktor-server-content-negotiation:2.3.6")
     implementation("io.ktor:ktor-server-status-pages:2.3.6")
+    implementation("io.ktor:ktor-server-double-receive:2.3.6")
 
     implementation("io.github.smiley4:ktor-swagger-ui:2.6.0")
     implementation("jp.kukv.ktor-extension-plugins:environment:0.1.2")
