@@ -1,7 +1,7 @@
 package jp.kukv.point.domain.model.point
 
-import jp.kukv.point.extensions.kotlinx.now
-import jp.kukv.point.extensions.kotlinx.plusYears
+import jp.kukv.point._extensions.kotlinx.now
+import jp.kukv.point._extensions.kotlinx.plusYears
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmInline

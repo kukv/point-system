@@ -1,4 +1,4 @@
-package jp.kukv.point.extensions.ktor
+package jp.kukv.point._extensions.ktor
 
 import io.ktor.server.application.ApplicationCall
 import io.ktor.server.request.receive

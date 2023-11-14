@@ -1,7 +1,7 @@
 package jp.kukv.point.infrastructure.datasource.point
 
-import jp.kukv.point.configuration.exposed.database
-import jp.kukv.point.extensions.kotlinx.now
+import jp.kukv.point._configuration.exposed.database
+import jp.kukv.point._extensions.kotlinx.now
 import jp.kukv.point.infrastructure.datasource.exposed.ActiveOwnershipPointTable
 import jp.kukv.point.infrastructure.datasource.exposed.OwnershipPointTable
 import jp.kukv.point.infrastructure.datasource.exposed.transaction

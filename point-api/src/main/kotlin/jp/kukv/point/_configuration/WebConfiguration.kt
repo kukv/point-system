@@ -1,4 +1,4 @@
-package jp.kukv.point.configuration
+package jp.kukv.point._configuration
 
 import com.github.ricky12awesome.jss.encodeToSchema
 import io.github.smiley4.ktorswaggerui.SwaggerUI
@@ -6,11 +6,10 @@ import io.ktor.serialization.kotlinx.json.json
 import io.ktor.server.application.Application
 import io.ktor.server.application.install
 import io.ktor.server.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.server.plugins.doublereceive.DoubleReceive
 import io.ktor.server.plugins.statuspages.StatusPages
 import io.ktor.server.routing.routing
 import jp.kukv.environment.EnvironmentPlugin
-import jp.kukv.point.configuration.koin.InjectConfiguration
+import jp.kukv.point._configuration.koin.InjectConfiguration
 import jp.kukv.point.endpoint.handler
 import jp.kukv.point.endpoint.point.pointRouting
 import jp.kukv.point.endpoint.transaction.transactionRouting
@@ -75,6 +74,4 @@ fun Application.module() {
     install(StatusPages) {
         handler()
     }
-
-    install(DoubleReceive)
 }

@@ -1,4 +1,4 @@
-package jp.kukv.point.configuration.exposed
+package jp.kukv.point._configuration.exposed
 
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource

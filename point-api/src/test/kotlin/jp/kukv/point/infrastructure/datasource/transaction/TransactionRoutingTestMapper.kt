@@ -1,6 +1,6 @@
 package jp.kukv.point.infrastructure.datasource.transaction
 
-import jp.kukv.point.configuration.exposed.database
+import jp.kukv.point._configuration.exposed.database
 import jp.kukv.point.domain.model.transaction.TransactionType
 import jp.kukv.point.infrastructure.datasource.exposed.PointTransactionNumberTable
 import jp.kukv.point.infrastructure.datasource.exposed.PointTransactionTable

@@ -1,6 +1,6 @@
 package jp.kukv.point.endpoint.point
 
-import jp.kukv.point.configuration.serializer.UUIDSerializer
+import jp.kukv.point._configuration.serializer.UUIDSerializer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import java.util.UUID

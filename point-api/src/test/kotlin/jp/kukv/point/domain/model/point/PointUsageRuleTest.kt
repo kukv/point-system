@@ -3,7 +3,7 @@ package jp.kukv.point.domain.model.point
 import io.mockk.every
 import io.mockk.mockkStatic
 import io.mockk.unmockkStatic
-import jp.kukv.point.extensions.kotlinx.now
+import jp.kukv.point._extensions.kotlinx.now
 import kotlinx.datetime.LocalDate
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.Assertions
