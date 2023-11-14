@@ -1,4 +1,4 @@
-package jp.kukv.point._extensions.kotlinx
+package jp.kukv.point.extensions.kotlinx
 
 import kotlinx.datetime.Clock
 import kotlinx.datetime.DateTimeUnit

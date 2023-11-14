@@ -18,17 +18,11 @@ class OwnershipPoint(
     }
 
     fun use(point: Point): OwnershipPoint {
-        val rule = PointUsageRule(this, point)
-        rule.check()
-
         val temporary = this.point - point
         return OwnershipPoint(temporary, expirationPeriod)
     }
 
     fun cancel(point: Point): OwnershipPoint {
-        val rule = PointCancelRule(this)
-        rule.check()
-
         val temporary = this.point + point
         return OwnershipPoint(temporary, expirationPeriod)
     }

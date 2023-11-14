@@ -1,6 +1,6 @@
 package jp.kukv.point.domain.model.transaction
 
-import jp.kukv.point._extensions.kotlinx.now
+import jp.kukv.point.extensions.kotlinx.now
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.monthsUntil

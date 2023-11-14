@@ -5,6 +5,7 @@ import jp.kukv.point.application.repository.point.PointUseRepository
 import jp.kukv.point.application.repository.transaction.TransactionRegisterRepository
 import jp.kukv.point.domain.model.identify.Id
 import jp.kukv.point.domain.model.point.Point
+import jp.kukv.point.domain.model.point.PointUsageRule
 import jp.kukv.point.domain.model.transaction.TransactionType
 import jp.kukv.point.infrastructure.datasource.Audit
 import jp.kukv.point.infrastructure.datasource.exposed.transaction
@@ -22,6 +23,9 @@ class PointUseDataSource(
         point: Point,
     ) {
         val current = pointRepository.findBy(id)
+
+        val rule = PointUsageRule(current, point)
+        rule.check()
 
         val usedOwnershipPoint = current.use(point)
         val audit = Audit.create(PointUseDataSource::class)

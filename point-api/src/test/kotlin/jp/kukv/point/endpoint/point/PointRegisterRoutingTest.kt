@@ -7,7 +7,6 @@ import io.ktor.server.testing.testApplication
 import io.mockk.every
 import io.mockk.mockkStatic
 import io.mockk.unmockkStatic
-import jp.kukv.point._extensions.kotlinx.now
 import jp.kukv.point.domain.model.point.ExpirationPeriod
 import jp.kukv.point.domain.model.point.OwnershipPoint
 import jp.kukv.point.domain.model.point.Point
@@ -18,6 +17,7 @@ import jp.kukv.point.domain.model.transaction.TransactionType
 import jp.kukv.point.domain.model.transaction.Transactions
 import jp.kukv.point.endpoint.get
 import jp.kukv.point.endpoint.post
+import jp.kukv.point.extensions.kotlinx.now
 import jp.kukv.point.infrastructure.datasource.point.PointRegisterRoutingTestMapper
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime

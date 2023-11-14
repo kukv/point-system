@@ -1,6 +1,6 @@
 package jp.kukv.point.infrastructure.datasource
 
-import jp.kukv.point._extensions.kotlinx.now
+import jp.kukv.point.extensions.kotlinx.now
 import kotlinx.datetime.LocalDateTime
 
 @JvmInline

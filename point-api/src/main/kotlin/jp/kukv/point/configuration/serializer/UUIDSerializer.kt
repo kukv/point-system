@@ -1,4 +1,4 @@
-package jp.kukv.point._configuration.serializer
+package jp.kukv.point.configuration.serializer
 
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.descriptors.PrimitiveKind

@@ -3,7 +3,7 @@ package jp.kukv.point.domain.model.point
 import io.mockk.every
 import io.mockk.mockkStatic
 import io.mockk.unmockkStatic
-import jp.kukv.point._extensions.kotlinx.now
+import jp.kukv.point.extensions.kotlinx.now
 import kotlinx.datetime.LocalDate
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.Assertions
@@ -68,26 +68,6 @@ class OwnershipPointTest {
     }
 
     @Test
-    @DisplayName("有効期限切れの場合ポイント利用できない")
-    fun `有効期限切れの場合ポイント利用できない`() {
-        val currentOwnershipPoint = OwnershipPoint(Point(10), ExpirationPeriod(LocalDate.parse("2023-11-03")))
-        val point = Point(10)
-
-        every { LocalDate.now() } returns LocalDate.parse("2023-11-06")
-        Assertions.assertThrows(IllegalStateException::class.java) { currentOwnershipPoint.use(point) }
-    }
-
-    @Test
-    @DisplayName("利用ポイントが保有ポイントを上回っている場合利用できない")
-    fun `利用ポイントが保有ポイントを上回っている場合利用できない`() {
-        val currentOwnershipPoint = OwnershipPoint(Point(10), ExpirationPeriod(LocalDate.parse("2023-11-03")))
-        val point = Point(100)
-
-        every { LocalDate.now() } returns LocalDate.parse("2023-11-02")
-        Assertions.assertThrows(IllegalStateException::class.java) { currentOwnershipPoint.use(point) }
-    }
-
-    @Test
     @DisplayName("ポイント利用キャンセルができる")
     fun `ポイント利用キャンセルができる`() {
         val currentOwnershipPoint = OwnershipPoint(Point(10), ExpirationPeriod(LocalDate.parse("2023-11-03")))
@@ -99,15 +79,5 @@ class OwnershipPointTest {
         val actual = currentOwnershipPoint.cancel(point)
         Assertions.assertEquals(30, actual.point())
         Assertions.assertEquals(LocalDate.parse("2023-11-03"), actual.expirationPeriod())
-    }
-
-    @Test
-    @DisplayName("有効期限切れの場合ポイント利用キャンセルできない")
-    fun `有効期限切れの場合ポイント利用キャンセルできない`() {
-        val currentOwnershipPoint = OwnershipPoint(Point(10), ExpirationPeriod(LocalDate.parse("2023-11-03")))
-        val point = Point(10)
-
-        every { LocalDate.now() } returns LocalDate.parse("2023-11-06")
-        Assertions.assertThrows(IllegalStateException::class.java) { currentOwnershipPoint.cancel(point) }
     }
 }

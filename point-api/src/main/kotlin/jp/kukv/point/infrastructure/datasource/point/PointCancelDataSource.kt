@@ -5,6 +5,7 @@ import jp.kukv.point.application.repository.point.PointRepository
 import jp.kukv.point.application.repository.transaction.TransactionRegisterRepository
 import jp.kukv.point.application.repository.transaction.TransactionRepository
 import jp.kukv.point.domain.model.identify.Id
+import jp.kukv.point.domain.model.point.PointCancelRule
 import jp.kukv.point.domain.model.transaction.TransactionNumber
 import jp.kukv.point.domain.model.transaction.TransactionType
 import jp.kukv.point.infrastructure.datasource.Audit
@@ -29,6 +30,10 @@ class PointCancelDataSource(
         }
 
         val currentOwnershipPoint = pointRepository.findBy(id)
+
+        val rule = PointCancelRule(currentOwnershipPoint)
+        rule.check()
+
         val canceledOwnershipPoint = currentOwnershipPoint.cancel(transaction.point)
 
         val audit = Audit.create(PointCancelDataSource::class)
