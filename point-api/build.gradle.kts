@@ -39,8 +39,6 @@ dependencies {
 
     implementation("io.insert-koin:koin-ktor:3.5.1")
     implementation("io.insert-koin:koin-logger-slf4j:3.5.1")
-    implementation("io.ktor:ktor-server-core-jvm:2.3.5")
-    implementation("io.ktor:ktor-server-double-receive-jvm:2.3.5")
 
     compileOnly("io.insert-koin:koin-annotations:1.3.0")
     ksp("io.insert-koin:koin-ksp-compiler:1.3.0")
