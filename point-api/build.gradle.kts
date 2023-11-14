@@ -12,8 +12,6 @@ plugins {
 
     id("io.ktor.plugin") version "2.3.6"
 
-    id("org.dddjava.jig-gradle-plugin") version "2023.10.1"
-
     id("com.avast.gradle.docker-compose") version "0.17.5"
 }
 
@@ -31,6 +29,7 @@ dependencies {
     implementation("io.ktor:ktor-server-cio:2.3.6")
     implementation("io.ktor:ktor-server-content-negotiation:2.3.6")
     implementation("io.ktor:ktor-server-status-pages:2.3.6")
+    implementation("io.ktor:ktor-server-double-receive:2.3.6")
 
     implementation("io.github.smiley4:ktor-swagger-ui:2.6.0")
     implementation("jp.kukv.ktor-extension-plugins:environment:0.1.2")
@@ -40,6 +39,8 @@ dependencies {
 
     implementation("io.insert-koin:koin-ktor:3.5.1")
     implementation("io.insert-koin:koin-logger-slf4j:3.5.1")
+    implementation("io.ktor:ktor-server-core-jvm:2.3.5")
+    implementation("io.ktor:ktor-server-double-receive-jvm:2.3.5")
 
     compileOnly("io.insert-koin:koin-annotations:1.3.0")
     ksp("io.insert-koin:koin-ksp-compiler:1.3.0")
