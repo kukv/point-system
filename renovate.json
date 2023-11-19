@@ -1,13 +1,19 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", ":timezone(Asia/Tokyo)"],
+  "extends": [
+    "config:base",
+    ":prHourlyLimitNone",
+    ":timezone(Asia/Tokyo)"
+  ],
+  "schedule": ["after 9am on monday", "before 12am on monday"],
   "labels": ["dependencies", "renovate"],
   "dependencyDashboard": true,
   "automerge": false,
   "packageRules": [
     {
-      "matchDepTypes": ["devDependencies"],
-      "groupName": "devDependencies"
+      "matchPackagePatterns": [
+        "org.springdoc"
+      ]
     }
   ]
 }
