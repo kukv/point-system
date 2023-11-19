@@ -1,8 +1,0 @@
-services:
-  db:
-    extends:
-      file: ./postgres/postgres.yml
-      service: db
-
-volumes:
-  db-data:

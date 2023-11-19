@@ -1,5 +1,5 @@
 plugins {
-    id("com.diffplug.spotless") version "6.22.0"
+    alias(libs.plugins.spotless)
 }
 
 repositories {
@@ -7,17 +7,8 @@ repositories {
 }
 
 spotless {
-    kotlin {
-        target("**/*.kt")
-        targetExclude("**/build/**/*.kt", "**/bin/**/*.kt")
-
-        ktlint()
-    }
-
     kotlinGradle {
-        target("**/*.gradle.kts")
-        targetExclude("**/build/**/*.kts")
-
+        target("*.gradle.kts")
         ktlint()
     }
 }

@@ -1,0 +1,154 @@
+[versions]
+kotlin = { strictly = "1.9.20" }
+ktor = { strictly = "2.3.6" }
+exposed = { strictly = "0.44.1" }
+koin = { strictly = "3.5.1" }
+koin-annotations = { strictly = "1.3.0" }
+
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+
+spring-boot = { id = "org.springframework.boot", version = { strictly = "3.1.5" } }
+spring-dependency-management = { id = "io.spring.dependency-management", version = { strictly = "1.1.4" } }
+springdoc-openapi = { id = "org.springdoc.openapi-gradle-plugin", version = { strictly = "1.8.0" } }
+
+ktor-plugin = { id = "io.ktor.plugin", version.ref = "ktor" }
+
+ksp = { id = "com.google.devtools.ksp", version = { strictly = "1.9.20-1.0.14" } }
+
+docker-compose = { id = "com.avast.gradle.docker-compose", version = { strictly = "0.17.5" } }
+
+spotless = { id = "com.diffplug.spotless", version = { strictly = "6.22.0" } }
+
+[libraries]
+spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation" }
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor" }
+spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools" }
+
+springdoc-openapi-starter-webmvc-ui = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version = { strictly = "2.2.0" } }
+
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = { strictly = "1.6.1" } }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version = { strictly = "0.4.1" } }
+
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
+ktor-server-cio = { module = "io.ktor:ktor-server-cio", version.ref = "ktor" }
+ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
+ktor-server-status-pages = { module = "io.ktor:ktor-server-status-pages", version.ref = "ktor" }
+ktor-server-double-receive = { module = "io.ktor:ktor-server-double-receive", version.ref = "ktor" }
+
+ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
+
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+
+ktor-swagger-ui = { module = "io.github.smiley4:ktor-swagger-ui", version = { strictly = "2.7.0" } }
+json-schema-serialization = { module = "com.github.Ricky12Awesome:json-schema-serialization", version = { strictly = "0.9.9" } }
+
+ktor-extension-plugins-environment = { module = "jp.kukv.ktor-extension-plugins:environment", version = { strictly = "0.1.2" } }
+
+logback-classic = { module = "ch.qos.logback:logback-classic", version = { strictly = "1.4.11" } }
+logback-access = { module = "ch.qos.logback:logback-access" }
+
+yavi = { module = "am.ik.yavi:yavi", version = { strictly = "0.13.1" } }
+
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
+exposed-dao = { module = "org.jetbrains.exposed:exposed-dao", version.ref = "exposed" }
+exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
+exposed-kotlin-datetime = { module = "org.jetbrains.exposed:exposed-kotlin-datetime", version.ref = "exposed" }
+exposed-spring-starter = { module = "org.jetbrains.exposed:exposed-spring-boot-starter", version.ref = "exposed" }
+
+koin-ktor = { module = "io.insert-koin:koin-ktor", version.ref = "koin" }
+koin-logger-slf4j = { module = "io.insert-koin:koin-logger-slf4j", version.ref = "koin" }
+koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koin-annotations" }
+koin-ksp-compiler = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koin-annotations" }
+
+postgresql-jdbc = { module = "org.postgresql:postgresql", version = { strictly = "42.6.0" } }
+hikari-cp = { module = "com.zaxxer:HikariCP", version = { strictly = "5.1.0" } }
+
+junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version = { strictly = "5.10.1" } }
+
+karate-junit5 = { module = "com.intuit.karate:karate-junit5", version = { strictly = "1.4.1" } }
+
+cucumber-reporting = { module = "net.masterthought:cucumber-reporting", version = { strictly = "5.7.7" } }
+
+archunit-junit5 = { module = "com.tngtech.archunit:archunit-junit5", version = { strictly = "1.2.0" } }
+
+mockk = { module = "io.mockk:mockk", version = { strictly = "1.13.8" } }
+
+[bundles]
+spring-api-starter = [
+    "spring-boot-starter-web",
+    "spring-boot-starter-validation",
+    "spring-boot-starter-actuator",
+    "springdoc-openapi-starter-webmvc-ui",
+    "logback-access"
+]
+
+spring-api-test-starter = [
+    "spring-boot-starter-test",
+    "karate-junit5",
+    "cucumber-reporting",
+    "archunit-junit5"
+]
+
+spring-batch-starter = [
+    "spring-boot-starter"
+]
+
+spring-batch-test-starter = [
+    "spring-boot-starter-test"
+]
+
+ktor-server = [
+    "ktor-serialization-kotlinx-json",
+    "ktor-server-core",
+    "ktor-server-cio",
+    "ktor-server-content-negotiation",
+    "ktor-server-status-pages",
+    "ktor-server-double-receive",
+
+    "ktor-swagger-ui",
+    "json-schema-serialization",
+
+    "ktor-extension-plugins-environment",
+
+    "logback-classic"
+]
+
+ktor-server-test = [
+    "ktor-server-test-host"
+]
+
+ktor-client = [
+    "ktor-client-core",
+    "ktor-client-cio",
+    "ktor-client-content-negotiation"
+]
+
+exposed-standalone = [
+    "exposed-core",
+    "exposed-dao",
+    "exposed-jdbc",
+    "exposed-kotlin-datetime",
+    "hikari-cp"
+]
+
+exposed-spring-stater = [
+    "exposed-spring-starter",
+    "exposed-kotlin-datetime"
+]
+
+koin-ktor = [
+    "koin-ktor",
+    "koin-logger-slf4j"
+]

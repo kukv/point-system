@@ -1,5 +1,9 @@
 rootProject.name = "izakaya-wagokoro"
 
-includeBuild("point-api")
-includeBuild("point-scheduler")
-includeBuild("menu-api")
+file("api").listFiles()?.forEach { module: File ->
+    includeBuild(module)
+}
+
+file("scheduler").listFiles()?.forEach { module: File ->
+    includeBuild(module)
+}
