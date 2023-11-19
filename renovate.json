@@ -7,10 +7,7 @@
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
-      "groupName": "devDependencies",
-      "matchPackagePatterns": [
-        "io.ktor.*"
-      ]
+      "groupName": "devDependencies"
     }
   ]
 }
