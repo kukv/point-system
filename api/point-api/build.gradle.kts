@@ -59,11 +59,6 @@ spotless {
         targetExclude("build/**/*.kt", "bin/**/*.kt")
         ktlint()
     }
-
-    kotlinGradle {
-        target("*.gradle.kts")
-        ktlint()
-    }
 }
 
 ktor {

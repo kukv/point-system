@@ -3,13 +3,18 @@ name: on-pull-request-point-api
 on:
   pull_request:
     paths:
-      - 'build.gradle.kts'
-      - 'settings.gradle.kts'
-      - 'gradle.properties'
-      - '.editorconfig'
-      - 'gradle/**'
+      - '.github/actions/**'
+      - '.github/workflows/on-pull-request-point-api.yml'
+      - 'api/point-api/**'
       - 'docker/**'
-      - 'point-api/**'
+      - 'gradle/**'
+      - '.editorconfig'
+      - '.envrc'
+      - 'build.gradle.kts'
+      - 'gradle.properties'
+      - 'gradlew'
+      - 'gradlew.bat'
+      - 'settings.gradle.kts'
 
 jobs:
   setup:
@@ -53,8 +58,11 @@ jobs:
       - name: Grant Execute Permission to gradlew
         run: chmod +x gradlew
 
-      - name: Check Code Style
+      - name: Check Code Style(gradle scripts)
         run: ./gradlew spotlessCheck
+
+      - name: Check Code Style(point-api)
+        run: ./gradlew :point-api:spotlessCheck
 
   build:
     runs-on: ubuntu-latest
