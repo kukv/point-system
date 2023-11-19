@@ -75,7 +75,7 @@ ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negoti
 ktor-server-status-pages = { module = "io.ktor:ktor-server-status-pages", version.ref = "ktor" }
 ktor-server-double-receive = { module = "io.ktor:ktor-server-double-receive", version.ref = "ktor" }
 
-ktor-swagger-ui = { module = "io.github.smiley4:ktor-swagger-ui", version = { strictly = "2.7.0" } }
+ktor-swagger-ui = { module = "io.github.smiley4:ktor-swagger-ui", version = { strictly = "2.7.1" } }
 json-schema-serialization = { module = "com.github.Ricky12Awesome:json-schema-serialization", version = { strictly = "0.9.9" } }
 ktor-extension-plugins-environment = { module = "jp.kukv.ktor-extension-plugins:environment", version = { strictly = "0.1.2" } }
 
