@@ -19,7 +19,6 @@ kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref 
 #########################################
 spring-boot = { id = "org.springframework.boot", version = { strictly = "3.1.5" } }
 spring-dependency-management = { id = "io.spring.dependency-management", version = { strictly = "1.1.4" } }
-springdoc-openapi = { id = "org.springdoc.openapi-gradle-plugin", version = { strictly = "1.8.0" } }
 
 #########################################
 # ktor
@@ -46,13 +45,6 @@ docker-compose = { id = "com.avast.gradle.docker-compose", version = { strictly 
 # spring boot modules
 #########################################
 spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter" }
-spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
-spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation" }
-spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
-spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor" }
-spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools" }
-springdoc-openapi-starter-webmvc-ui = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version = { strictly = "2.2.0" } }
-
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
 
 #########################################
@@ -92,7 +84,6 @@ ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negoti
 # logging modules
 #########################################
 logback-classic = { module = "ch.qos.logback:logback-classic", version = { strictly = "1.4.11" } }
-logback-access = { module = "ch.qos.logback:logback-access" }
 
 #########################################
 # validation modules
@@ -126,30 +117,9 @@ hikari-cp = { module = "com.zaxxer:HikariCP", version = { strictly = "5.1.0" } }
 # test modules
 #########################################
 junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version = { strictly = "5.10.1" } }
-
-karate-junit5 = { module = "com.intuit.karate:karate-junit5", version = { strictly = "1.4.1" } }
-cucumber-reporting = { module = "net.masterthought:cucumber-reporting", version = { strictly = "5.7.7" } }
-
-archunit-junit5 = { module = "com.tngtech.archunit:archunit-junit5", version = { strictly = "1.2.0" } }
-
 mockk = { module = "io.mockk:mockk", version = { strictly = "1.13.8" } }
 
 [bundles]
-spring-api-starter = [
-    "spring-boot-starter-web",
-    "spring-boot-starter-validation",
-    "spring-boot-starter-actuator",
-    "springdoc-openapi-starter-webmvc-ui",
-    "logback-access"
-]
-
-spring-api-test-starter = [
-    "spring-boot-starter-test",
-    "karate-junit5",
-    "cucumber-reporting",
-    "archunit-junit5"
-]
-
 spring-batch-starter = [
     "spring-boot-starter"
 ]

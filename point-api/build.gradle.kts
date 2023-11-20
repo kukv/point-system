@@ -73,7 +73,7 @@ ktor {
 
 dockerCompose {
     isRequiredBy(project.tasks.test)
-    useComposeFiles = listOf("../../docker/compose.yml")
+    useComposeFiles = listOf("../docker/compose.yml")
 }
 
 tasks {

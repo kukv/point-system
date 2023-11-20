@@ -1,9 +1,4 @@
-rootProject.name = "izakaya-wagokoro"
+rootProject.name = "point-system"
 
-file("api").listFiles()?.forEach { module: File ->
-    includeBuild(module)
-}
-
-file("scheduler").listFiles()?.forEach { module: File ->
-    includeBuild(module)
-}
+includeBuild("point-api")
+includeBuild("point-scheduler")

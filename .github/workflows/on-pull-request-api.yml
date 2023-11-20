@@ -1,11 +1,11 @@
-name: on-pull-request-point-api
+name: on-pull-request-api
 
 on:
   pull_request:
     paths:
       - '.github/actions/**'
-      - '.github/workflows/on-pull-request-point-api.yml'
-      - 'api/point-api/**'
+      - '.github/workflows/on-pull-request-api.yml'
+      - 'point-api/**'
       - 'docker/**'
       - 'gradle/**'
       - '.editorconfig'

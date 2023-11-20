@@ -1,13 +1,13 @@
-name: on-pull-request-point-scheduler
+name: on-pull-request-scheduler
 
 on:
   pull_request:
     paths:
       - '.github/actions/**'
-      - '.github/workflows/on-pull-request-point-scheduler.yml'
+      - '.github/workflows/on-pull-request-scheduler.yml'
       - 'docker/**'
       - 'gradle/**'
-      - 'scheduler/point-scheduler/**'
+      - 'point-scheduler/**'
       - '.editorconfig'
       - '.envrc'
       - 'build.gradle.kts'
