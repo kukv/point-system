@@ -1,0 +1,18 @@
+###
+POST http://localhost:8080/v1/point/reservation
+Content-Type: application/json
+
+{
+  "id": 1,
+  "reason": "test3",
+  "amount": 1000
+}
+
+###
+POST http://localhost:8080/v1/point/earn/reflect
+Content-Type: application/json
+
+{
+  "id": 1,
+  "transaction_number": "5bf26e07-bc55-41ae-acb8-034e32327a6c"
+}

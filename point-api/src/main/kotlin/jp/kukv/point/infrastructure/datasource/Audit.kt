@@ -2,6 +2,9 @@ package jp.kukv.point.infrastructure.datasource
 
 import kotlin.reflect.KClass
 
+/**
+ * 記録者
+ */
 class Audit private constructor(val persistenceTime: PersistenceTime, val auditor: Auditor) {
     override fun toString(): String {
         return "Audit(persistenceTime=$persistenceTime, auditor=$auditor)"

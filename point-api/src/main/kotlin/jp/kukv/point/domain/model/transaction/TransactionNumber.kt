@@ -16,7 +16,7 @@ value class TransactionNumber private constructor(private val value: String) {
     override fun toString() = value
 
     companion object {
-        fun create(): TransactionNumber = TransactionNumber(UUID.randomUUID().toString())
+        fun create(): TransactionNumber = TransactionNumber(UUID.randomUUID())
 
         val validator =
             validator {

@@ -1,14 +1,12 @@
 package jp.kukv.point.domain.model.point
 
-import jp.kukv.point._extensions.kotlinx.now
-import jp.kukv.point._extensions.kotlinx.plusYears
+import jp.kukv.point._extensions.kotlinx.datetime.now
+import jp.kukv.point._extensions.kotlinx.datetime.plusYears
 import kotlinx.datetime.LocalDate
-import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmInline
 
 /** 有効期限 */
 @JvmInline
-@Serializable
 value class ExpirationPeriod(private val value: LocalDate) {
     fun isExpired(): Boolean {
         val currentDate = LocalDate.now()

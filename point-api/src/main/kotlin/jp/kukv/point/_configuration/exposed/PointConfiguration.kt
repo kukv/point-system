@@ -6,7 +6,10 @@ import jp.kukv.environment.EnvironmentComponent
 import jp.kukv.environment.inject
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.DatabaseConfig
+import org.koin.core.annotation.Module
+import org.koin.core.annotation.Single
 
+@Module
 class PointConfiguration : EnvironmentComponent {
     private val jdbcUrl by inject<String>("external.dataSource.point.jdbcUrl")
     private val driver by inject<String>("external.dataSource.point.driverClassName")
@@ -16,7 +19,8 @@ class PointConfiguration : EnvironmentComponent {
     private val autoCommit by inject<Boolean>("external.dataSource.point.autoCommit")
     private val transactionIsolation by inject<String>("external.dataSource.point.transactionIsolation")
 
-    fun toDatabase(): Database {
+    @Single
+    fun database(): Database {
         val hikariConfig = HikariConfig()
         hikariConfig.jdbcUrl = jdbcUrl
         hikariConfig.driverClassName = driver

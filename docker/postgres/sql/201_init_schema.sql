@@ -1,4 +1,4 @@
-\connect wagokoro
+\connect point_system
 set role bradmin;
 
 --#########################################

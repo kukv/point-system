@@ -2,7 +2,7 @@ spring:
   application:
     name: point-expiration-execution
   datasource:
-    url: jdbc:postgresql://localhost:5432/wagokoro?currentSchema=point
+    url: jdbc:postgresql://localhost:5432/point_system?currentSchema=point
     username: luster
     password: luster
     driver-class-name: org.postgresql.Driver

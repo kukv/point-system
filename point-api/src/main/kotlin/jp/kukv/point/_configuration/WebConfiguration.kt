@@ -1,77 +1,39 @@
 package jp.kukv.point._configuration
 
-import com.github.ricky12awesome.jss.encodeToSchema
-import io.github.smiley4.ktorswaggerui.SwaggerUI
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.server.application.Application
 import io.ktor.server.application.install
 import io.ktor.server.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.server.plugins.statuspages.StatusPages
-import io.ktor.server.routing.routing
 import jp.kukv.environment.EnvironmentPlugin
-import jp.kukv.point._configuration.koin.InjectConfiguration
-import jp.kukv.point.endpoint.handler
-import jp.kukv.point.endpoint.point.pointRouting
-import jp.kukv.point.endpoint.transaction.transactionRouting
+import jp.kukv.point._configuration.exposed.PointConfiguration
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.serializer
+import org.koin.core.annotation.ComponentScan
+import org.koin.core.annotation.Module
+import org.koin.core.annotation.Single
 import org.koin.ksp.generated.module
+import org.koin.ktor.ext.inject
 import org.koin.ktor.plugin.koin
 
-fun Application.module() {
-    install(EnvironmentPlugin)
-
-    koin {
-        modules(InjectConfiguration().module)
-    }
-
-    val kotlinxJson =
+@Module(includes = [ PointConfiguration::class ])
+@ComponentScan("jp.kukv.point")
+class WebConfiguration {
+    @Single
+    fun json(): Json =
         Json {
             prettyPrint = true
             isLenient = true
         }
+}
 
+fun Application.configuration() {
+    install(EnvironmentPlugin)
+
+    koin {
+        modules(WebConfiguration().module)
+    }
+
+    val json by inject<Json>()
     install(ContentNegotiation) {
-        json(kotlinxJson)
-    }
-
-    install(SwaggerUI) {
-        encoding {
-            schemaEncoder { type ->
-                kotlinxJson.encodeToSchema(serializer(type), generateDefinitions = false)
-            }
-            schemaDefinitionsField = "definitions"
-            exampleEncoder { type, value ->
-                kotlinxJson.encodeToString(serializer(type!!), value)
-            }
-        }
-
-        swagger {
-            swaggerUrl = "swagger-ui"
-            forwardRoot = true
-        }
-        info {
-            title = "Point API"
-            version = "0.0.1"
-            description = "ポイント情報を管理するAPI"
-            contact {
-                name = "kukv"
-                url = "https://github.com/kukv"
-                email = "example@example.com"
-            }
-        }
-        server {
-            url = "http://localhost:8080"
-            description = "Local Server"
-        }
-    }
-
-    routing {
-        pointRouting()
-        transactionRouting()
-    }
-
-    install(StatusPages) {
-        handler()
+        json(json)
     }
 }

@@ -25,7 +25,7 @@ dependencies {
 
 kotlin {
     jvmToolchain {
-        languageVersion.set(JavaLanguageVersion.of("17"))
+        languageVersion.set(JavaLanguageVersion.of("21"))
     }
 }
 
@@ -40,7 +40,7 @@ spotless {
 tasks {
     withType<KotlinJvmCompile> {
         kotlinOptions {
-            jvmTarget = "17"
+            jvmTarget = "21"
             apiVersion = "1.9"
             languageVersion = "1.9"
         }

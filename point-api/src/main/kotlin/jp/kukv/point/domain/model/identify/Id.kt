@@ -4,7 +4,7 @@ import am.ik.yavi.builder.validator
 import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmInline
 
-/** id */
+/** ID */
 @JvmInline
 @Serializable
 value class Id(private val value: Int) {

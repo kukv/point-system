@@ -1,23 +1,11 @@
 package jp.kukv.point.domain.model.point
 
 import am.ik.yavi.builder.validator
-import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmInline
 
 /** ポイント */
 @JvmInline
-@Serializable
 value class Point(private val value: Int) {
-    fun hasMore(point: Point): Boolean = value >= point.value
-
-    operator fun plus(point: Point): Point {
-        return Point(value + point.value)
-    }
-
-    operator fun minus(point: Point): Point {
-        return Point(value - point.value)
-    }
-
     operator fun invoke() = value
 
     override fun toString() = value.toString()

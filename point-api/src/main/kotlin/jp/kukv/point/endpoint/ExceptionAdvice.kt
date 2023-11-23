@@ -5,7 +5,7 @@ import io.ktor.serialization.JsonConvertException
 import io.ktor.server.plugins.BadRequestException
 import io.ktor.server.plugins.statuspages.StatusPagesConfig
 import io.ktor.server.response.respond
-import jp.kukv.point.domain.policy.ResourceNotfoundException
+import jp.kukv.point.domain.policy.exception.ResourceNotfoundException
 import org.slf4j.LoggerFactory
 
 private val logger = LoggerFactory.getLogger("ExceptionAdvice")

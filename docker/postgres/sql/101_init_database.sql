@@ -1,9 +1,9 @@
 --#########################################
 --# drop
 --#########################################
-DROP DATABASE IF EXISTS wagokoro;
+DROP DATABASE IF EXISTS point_system;
 
 --#########################################
 --# create
 --#########################################
-CREATE DATABASE wagokoro WITH OWNER bradmin;
+CREATE DATABASE point_system WITH OWNER bradmin;
