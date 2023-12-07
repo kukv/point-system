@@ -110,7 +110,7 @@ koin-ksp-compiler = { module = "io.insert-koin:koin-ksp-compiler", version.ref =
 #########################################
 # datasource connection modules
 #########################################
-postgresql-jdbc = { module = "org.postgresql:postgresql", version = { strictly = "42.6.0" } }
+postgresql-jdbc = { module = "org.postgresql:postgresql", version = { strictly = "42.7.1" } }
 hikari-cp = { module = "com.zaxxer:HikariCP", version = { strictly = "5.1.0" } }
 
 #########################################
