@@ -1,5 +1,5 @@
 [versions]
-kotlin = { strictly = "1.9.20" }
+kotlin = { strictly = "1.9.22" }
 ktor = { strictly = "2.3.6" }
 exposed = { strictly = "0.44.1" }
 koin = { strictly = "3.5.1" }
