@@ -1,7 +1,7 @@
 [versions]
 kotlin = { strictly = "1.9.22" }
 ktor = { strictly = "2.3.6" }
-exposed = { strictly = "0.44.1" }
+exposed = { strictly = "0.46.0" }
 koin = { strictly = "3.5.1" }
 koin-annotations = { strictly = "1.3.0" }
 
