@@ -28,7 +28,7 @@ ktor-plugin = { id = "io.ktor.plugin", version.ref = "ktor" }
 #########################################
 # google develop
 #########################################
-ksp = { id = "com.google.devtools.ksp", version = { strictly = "1.9.20-1.0.14" } }
+ksp = { id = "com.google.devtools.ksp", version = { strictly = "1.9.22-1.0.16" } }
 
 #########################################
 # code format
