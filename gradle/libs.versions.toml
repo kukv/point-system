@@ -83,7 +83,7 @@ ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negoti
 #########################################
 # logging modules
 #########################################
-logback-classic = { module = "ch.qos.logback:logback-classic", version = { strictly = "1.4.11" } }
+logback-classic = { module = "ch.qos.logback:logback-classic", version = { strictly = "1.4.14" } }
 
 #########################################
 # validation modules
