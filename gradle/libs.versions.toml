@@ -50,7 +50,7 @@ spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-star
 #########################################
 # kotlinx modules
 #########################################
-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = { strictly = "1.6.1" } }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = { strictly = "1.6.2" } }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version = { strictly = "0.4.1" } }
 
 #########################################
