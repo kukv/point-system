@@ -38,7 +38,7 @@ spotless = { id = "com.diffplug.spotless", version = { strictly = "6.23.3" } }
 #########################################
 # other
 #########################################
-docker-compose = { id = "com.avast.gradle.docker-compose", version = { strictly = "0.17.5" } }
+docker-compose = { id = "com.avast.gradle.docker-compose", version = { strictly = "0.17.6" } }
 
 [libraries]
 #########################################
